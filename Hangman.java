@@ -1,4 +1,4 @@
-package InterestingProjects;
+
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -18,12 +18,12 @@ public class Hangman {
             "wombat", "zebra"};
 
     public static String[] gallows = {"+---+\n" +
-                                        "|   |\n" +
-                                        "    |\n" +
-                                        "    |\n" +
-                                        "    |\n" +
-                                        "    |\n" +
-                                        "=========\n",
+            "|   |\n" +
+            "    |\n" +
+            "    |\n" +
+            "    |\n" +
+            "    |\n" +
+            "=========\n",
 
             "+---+\n" +
                     "|   |\n" +
@@ -52,7 +52,7 @@ public class Hangman {
             " +---+\n" +
                     " |   |\n" +
                     " O   |\n" +
-                    "/|\\  |\n" + //if you were wondering, the only way to print '\' is with a trailing escape character, which also happens to be '\'
+                    "/|\\  |\n" + 
                     "     |\n" +
                     "     |\n" +
                     " =========\n",
@@ -99,9 +99,9 @@ public class Hangman {
                 missed[misses]=c;
                 misses++;
             }
-//            System.out.println("\033[H\033[2J");
-//            System.out.flush();
-            new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
+            System.out.print("\033[2J");
+            System.out.flush();
+
             if (Arrays.equals(choosen.toCharArray(),placeholders)){
                 System.out.print(gallows[misses]);
                 System.out.print("\nWord:   ");
